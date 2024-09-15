@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #b835a2;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: rgb(244, 246, 248);
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.products-section {
+    padding: 30px;
+    text-align: left;
+}
+
+/* Flexbox for aligning products side by side */
+.products-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    justify-content: center; /* Spreads the products evenly */
+    gap: 50px; /* Adds space between the products */
+}
+
+/* Product card */
+.product {
+    border: 1px solid #058a98;
+    background-color: antiquewhite;
+    padding: 30px;
+    width: 55%; /* Make sure each product takes around 30% of the container width */
+    min-width: 280px; /* Ensures a minimum width to avoid being too small */
+    box-sizing: border-box;
+    flex: 1 1 300px;
+    margin: 0;
+    flex-grow: 1; /* Allows flexibility for resizing */
+}
+
+/* Instagram embed should scale */
+.product blockquote {
+    width: 100%; /* Ensure Instagram embed scales to the product container */
+}
+
+/* Styling for the buy link */
+.buy-link {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #822db7;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.buy-link:hover {
+    background-color: #4acced;
+}
+
+.about-section {
+    padding: 20px;
+    background-color: #ef8fd4;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Media query for larger screens to ensure products are side by side */
+@media (min-width: 1024px) {
+    .products-container {
+        justify-content: space-between; /* Keeps the products aligned horizontally */
+    }
+
+    .product {
+        flex: 0 1 calc(33.333% - 20px); /* Ensures 3 products fit in one row with spacing */
+        max-width: 30%; /* Fix max-width to prevent uneven size */
+    }
+}
